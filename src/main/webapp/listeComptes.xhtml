@@ -9,7 +9,14 @@
     <body>
 
         <ui:composition template="/WEB-INF/templates/template_default.xhtml">
-
+            <ui:define name="metadata">
+                <f:metadata>
+                    <f:viewParam name="idSource" value="#{transfert.idSource}"/>
+                    <f:viewParam name="idDestination" value="#{transfert.idDestination}"/>
+                    <f:viewParam name="montant" value="#{transfert.montant}"/>
+                </f:metadata>
+            </ui:define>
+            
             <ui:define name="top">
                 Liste des comptes
             </ui:define>
