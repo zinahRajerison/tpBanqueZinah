@@ -9,15 +9,7 @@
     <body>
 
         <ui:composition template="/WEB-INF/templates/template_default.xhtml">
-            <ui:define name="metadata">
-                <f:metadata>
-                    <f:viewParam name="idSource" value="#{transfert.idSource}"/>
-                    <f:viewParam name="idDestination" value="#{transfert.idDestination}"/>
-                    <f:viewParam name="montant" value="#{transfert.montant}"/>
-                    <f:viewParam name="montant" value="#{ajoutCompte.nom}"/>
-                    <f:viewParam name="montant" value="#{ajoutCompte.solde}"/>
-                </f:metadata>
-            </ui:define>
+           
 
             <ui:define name="top">
                 Liste des comptes
@@ -36,7 +28,8 @@
                                 <f:facet name="header">
                                     <h:outputText value="ID"/>
                                 </f:facet>
-                                <h:outputText value="#{item.id}"/>
+                                <h:link outcome="mouvement?id=#{item.id}" 
+                                        value="#{item.id}"/>
                             </p:column>
                             <p:column sortBy="#{item.nom}" filterBy="#{item.nom}">
                                 <f:facet name="header">

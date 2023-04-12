@@ -9,6 +9,7 @@ import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Named;
 import mg.itu.zinah.tpbanquezinah.ejb.GestionnaireCompte;
 import mg.itu.zinah.tpbanquezinah.entities.CompteBancaire;
+import mg.itu.zinah.tpbanquezinah.jsf.util.Util;
 
 /**
  *
@@ -84,7 +85,7 @@ public class TransfertBean {
         gc.transferer(source, destination, montant);
 // Message de succès ; addFlash à cause de la redirection.
         Util.addFlashInfoMessage("Transfert de "+ montant +"Ar correctement effectué depuis "+source.getNom()+" vers "+destination.getNom());
-        return "listeComptes?idSource="+idSource+"&amp;idDestination="+idDestination+"&amp;montant="+montant+"&amp;faces-redirect=true";
+        return "listeComptes?faces-redirect=true";
     }
 
 }

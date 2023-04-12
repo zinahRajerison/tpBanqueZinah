@@ -10,7 +10,7 @@ import jakarta.enterprise.context.RequestScoped;
 import jakarta.validation.constraints.PositiveOrZero;
 import mg.itu.zinah.tpbanquezinah.ejb.GestionnaireCompte;
 import mg.itu.zinah.tpbanquezinah.entities.CompteBancaire;
-
+import mg.itu.zinah.tpbanquezinah.jsf.util.Util;
 /**
  *
  * @author Lenovo
@@ -65,6 +65,6 @@ public class AjoutCompte {
         gc.creerCompte(new CompteBancaire(nom, solde));
 // Message de succès ; addFlash à cause de la redirection.
         Util.addFlashInfoMessage("Compte cree avec succes");
-        return "listeComptes?nom=" + nom + "&amp;solde=" + solde + "&amp;faces-redirect=true";
+        return "listeComptes?faces-redirect=true";
     }
 }
