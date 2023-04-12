@@ -83,7 +83,7 @@ public class TransfertBean {
         }
         gc.transferer(source, destination, montant);
 // Message de succès ; addFlash à cause de la redirection.
-        Util.addFlashInfoMessage("Transfert correctement effectué");
+        Util.addFlashInfoMessage("Transfert de "+ montant +"Ar correctement effectué depuis "+source.getNom()+" vers "+destination.getNom());
         return "listeComptes?idSource="+idSource+"&amp;idDestination="+idDestination+"&amp;montant="+montant+"&amp;faces-redirect=true";
     }
 
