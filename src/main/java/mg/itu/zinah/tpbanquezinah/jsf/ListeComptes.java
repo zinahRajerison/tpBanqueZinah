@@ -11,6 +11,7 @@ import java.io.Serializable;
 import java.util.List;
 import mg.itu.zinah.tpbanquezinah.ejb.GestionnaireCompte;
 import mg.itu.zinah.tpbanquezinah.entities.CompteBancaire;
+import mg.itu.zinah.tpbanquezinah.jsf.util.Util;
 
 /**
  *
@@ -37,4 +38,9 @@ public class ListeComptes implements Serializable {
         return comptes;
     }
 
+    public String supprimerCompte(CompteBancaire compteBancaire) {
+        gc.supprimerCompte(compteBancaire);
+        Util.addFlashInfoMessage("Compte de " + compteBancaire.getNom() + " supprimé");
+        return "listeComptes?faces-redirect=true";
+    }
 }
