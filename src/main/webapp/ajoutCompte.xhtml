@@ -9,7 +9,7 @@
         <ui:composition template="./WEB-INF/templates/template_default.xhtml">
 
             <ui:define name="top">
-                Creatipon nouveau compte
+                Creation nouveau compte
             </ui:define>
 
             <ui:define name="content">
@@ -20,13 +20,13 @@
                                      required="true"
                                      converterMessage="Le nom est un texte"/>
                         <h:message for="nom"/>
-                        Montant a transferer : 
+                        Solde initial : 
                         <h:inputText id="solde" size="3" value="#{ajoutCompte.solde}"
                                      required="true"
                                      converterMessage="Le solde est un nombre entier positif"/>
                         <h:message for="solde"/>
                     </h:panelGrid>
-                    <h:commandButton id="creation" value="Creer compte" action="#{ajoutCompte.ajoutCompte()}"/>
+                    <h:commandButton id="creation" value="Créer compte" action="#{ajoutCompte.ajoutCompte()}"/>
                 </h:form>
                 <h:messages/>
             </ui:define>

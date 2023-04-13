@@ -7,10 +7,7 @@
       xmlns:p="http://primefaces.org/ui">
 
     <body>
-
         <ui:composition template="/WEB-INF/templates/template_default.xhtml">
-
-
             <ui:define name="top">
                 Liste des comptes
             </ui:define>
@@ -24,20 +21,20 @@
                                      var="item"  paginator="true" rows="10"
                                      rowsPerPageTemplate="2,4,8,10"
                                      paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
-                            <p:column >
+                            <p:column width="30">
                                 <f:facet name="header">
                                     <h:outputText value="ID"/>
                                 </f:facet>
                                 <h:link outcome="mouvement?id=#{item.id}" 
                                         value="#{item.id}"/>
                             </p:column>
-                            <p:column sortBy="#{item.nom}" filterBy="#{item.nom}">
+                            <p:column sortBy="#{item.nom}" filterBy="#{item.nom}" width="30">
                                 <f:facet name="header">
                                     <h:outputText value="Nom"/>
                                 </f:facet>
                                 <h:outputText value="#{item.nom}"/>
                             </p:column>
-                            <p:column sortBy="#{item.solde}" filterBy="#{item.solde}">
+                            <p:column sortBy="#{item.solde}" filterBy="#{item.solde}" width="30">
                                 <f:facet name="header">
                                     <h:outputText value="Solde"/>
                                 </f:facet>
@@ -51,6 +48,9 @@
                                                title="Supprimer le compte de #{item.nom}" >
                                     <h:graphicImage name="images/suppr.png"/>
                                 </h:commandLink>
+                                <h:link outcome="modification?id=#{item.id}" >
+                                    <h:graphicImage name="images/modif.png" width="25px"/>
+                                </h:link>
                             </p:column>
 
                         </p:dataTable>
