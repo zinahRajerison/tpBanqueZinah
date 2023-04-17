@@ -52,7 +52,15 @@
                                     <h:graphicImage name="images/modif.png" width="25px"/>
                                 </h:link>
                             </p:column>
-
+                            <p:column width="10">
+                                <f:facet name="header">
+                                    <h:outputText escape="false" value="Historique&lt;br/>opérations"/>
+                                </f:facet>
+                               <h:link outcome="operations">
+                                   <f:param name="id" value="#{item.id}"/>
+                                   Details
+                               </h:link>
+                            </p:column>
                         </p:dataTable>
                     </h:form>
                     <h:messages/> 
